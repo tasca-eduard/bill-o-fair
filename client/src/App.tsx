@@ -1,7 +1,7 @@
 import React from 'react';
 import '../src/sass/main.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Invoices from './pages/invoices/Invoices';
+import Navigation from './components/navigation/Navigation';
 
 interface Props {
 
@@ -21,11 +21,18 @@ class App extends React.Component<Props, State> {
             <div className="app">
                 <BrowserRouter>
                     <main className="main-component">
-                        <Switch>
-                            <Route path="/" exact>
-                                <Invoices />
+                        <section className="screen-structure">
+                            <Navigation />
+                            <Route path="/bills">
+                                <span>Bills</span>
                             </Route>
-                        </Switch>
+                            <Route path="/graphs">
+                                <span>Graphs</span>
+                            </Route>
+                            <Route path="/overview">
+                                <span>Overview</span>
+                            </Route>
+                        </section>
                     </main>
                 </BrowserRouter>
             </div>

@@ -1,5 +1,9 @@
-@import './shared/variables.scss';
+@import './shared/variables';
+@import './shared/typography';
+@import './shared/utilities';
+@import './shared/base';
+@import './shared/layout';
 
-@import './structures/screen.scss';
+@import './structures/screen';
 
-@import './components/navigation.scss';
+@import './components/navigation';
