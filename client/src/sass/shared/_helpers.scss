@@ -1,0 +1,17 @@
+.shadow-mask {
+    position: relative;
+
+    &.right {
+        .mask {
+            content: '';
+            height: 100%;
+            width: rem(50);
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            box-shadow: 20px 0 8px -10px rgba($gray2, .5);
+            transform: translateX(100%) rotate(180deg);
+        }
+    }
+}
