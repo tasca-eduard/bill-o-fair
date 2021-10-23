@@ -1,4 +1,4 @@
-import React, { useRef, WheelEvent } from 'react';
+import React, { WheelEvent } from 'react';
 import { Switch, Route, NavLink, RouteComponentProps } from 'react-router-dom';
 import { BillsTabelDTO } from '../../api/dtos/BillsTable';
 import { PaymentDTO } from '../../api/dtos/Payment';
@@ -62,7 +62,7 @@ class Bills extends React.Component<Props, State> {
                                 {this.state.billsData.services.map((service: ServiceDTO) => {
                                     return (
                                         <th className="head">
-                                            <NavLink to={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}>
+                                            <NavLink className="link" title={service.name} to={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}>
                                                 {service.name}
                                                 <i className={`bill-icon ${service.icon}`}></i>
                                             </NavLink>

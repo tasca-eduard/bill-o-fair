@@ -46,14 +46,26 @@ class BillDetails extends React.Component<Props, State> {
         return this.props.serviceDetails[currentSlide].name.toLowerCase().replace(' ', '');
     }
 
+    goToBillsPage = () => {
+        this.props.history.push('/bills');
+    }
+
+    preventPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+    }
+
     render() {
         return (
-            <div className="modal-overlay">
-                <div className="modal">
+            <div className="modal-overlay" onClick={this.goToBillsPage}>
+                <div className="modal" onClick={this.preventPropagation}>
+                    <div className="cta-wrapper">
+                        <NavLink className="back-cta" to="/bills">
+                            Back To Bills
+                        </NavLink>
+                    </div>
                     <Slider 
                         {...this.sliderSettings}
                         initialSlide={this.state.slideIndex}
-                        
                     >
                         {
                             this.props.serviceDetails.map((service: ServiceDTO) => {

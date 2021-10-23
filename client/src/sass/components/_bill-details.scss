@@ -1,6 +1,13 @@
 .bill-details-component {
+
     .info {
         display: flex;
         justify-content: space-between;
+    }
+    
+    .title {
+        font-size: rem(30);
+        color: $primaryType;
+        font-weight: 300;
     }
 }

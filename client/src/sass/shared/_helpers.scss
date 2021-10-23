@@ -12,10 +12,45 @@
         width: 100%;
         height: rem(700);
         background: $gray2;
-        max-width: rem(1200);
-        padding: rem(60) rem(50);
-        box-shadow: inset 0 0 4px 4px rgba($gray1, .1),
-                    0 0 10px 4px rgba($gray1, .1);
+        max-width: rem(1400);
+        padding: rem(60) rem(80);
+        box-shadow: 0 0 8px 2px rgba($gray1, .1);
+    }
 
+    .cta-wrapper {
+        text-align: right;
+        margin-bottom: rem(50);
+    }
+
+    .back-cta {
+        color: $primaryType;
+        border: 1px solid $primaryType;
+        padding: rem(10) rem(20);
+        transition: .1s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+}
+
+.slick-slider {
+    .slick-arrow {
+        width: auto;
+        height: auto;
+
+        &::before {
+            color: rgba($white, .5);
+            font-size: rem(50);
+        }
+    }
+
+    .slick-prev {
+        left: rem(-60);
+    }
+
+    .slick-next {
+        right: rem(-60);
     }
 }
