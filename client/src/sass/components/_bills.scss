@@ -32,7 +32,8 @@
             }
         }
 
-        &:last-of-type {
+        &:last-of-type,
+        &:nth-last-of-type(2) {
             &::after {
                 content: none;
             }
@@ -83,6 +84,7 @@
         background: $gray1;
         padding: rem(14) rem(20);
         padding-left: 0;
+        border-right: 1px solid $gray2;
     }
 
     .group-image {
@@ -133,5 +135,12 @@
                 bottom: 0;
             }
         }
+    }
+
+    .total {
+        position: sticky;
+        right: 0;
+        z-index: 2;
+        background: $gray1;
     }
 }

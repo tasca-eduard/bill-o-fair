@@ -4,31 +4,38 @@
     "services": [
         {
             "name": "Heat",
-            "icon": "fas fa-fire"
+            "icon": "fas fa-fire",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         },
         {
             "name": "Electricity",
-            "icon": "fas fa-bolt"
+            "icon": "fas fa-bolt",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         },
         {
             "name": "Internet",
-            "icon": "fas fa-wifi"
+            "icon": "fas fa-wifi",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         },
         {
             "name": "Water",
-            "icon": "fas fa-tint"
+            "icon": "fas fa-tint",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+    },
+        {
+            "name": "Other 1",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         },
         {
-            "name": "Other",
-            "icon": ""
+            "name": "Other 2",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         },
         {
-            "name": "Other",
-            "icon": ""
-        },
-        {
-            "name": "Other",
-            "icon": ""
+            "name": "Other 3",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
         }
     ],
     "userBillData": [

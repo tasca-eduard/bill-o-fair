@@ -1,12 +1,18 @@
 import React, { useRef, WheelEvent } from 'react';
+import { Switch, Route, NavLink, RouteComponentProps } from 'react-router-dom';
+import { BillsTabelDTO } from '../../api/dtos/BillsTable';
+import { PaymentDTO } from '../../api/dtos/Payment';
+import { ServiceDTO } from '../../api/dtos/Service';
+import { UserBillDataDTO } from '../../api/dtos/UserBillData';
+import BillDetails from '../../components/bill-details/BillDetails';
 import dummyBillsData from '../../dummy-data/bills.json';
 
-interface Props {
+interface Props extends RouteComponentProps {
 
 }
 
 interface State {
-    billsData: any
+    billsData: BillsTabelDTO
 }
 
 class Bills extends React.Component<Props, State> {
@@ -33,14 +39,9 @@ class Bills extends React.Component<Props, State> {
         }
     }
 
-    componentDidMount() {
-        console.log(this.state.billsData)
-    }
-
     render() {
         return (
-            <div className="shadow-mask right">
-                <div className="mask"></div>
+            <React.Fragment>
                 <div className="bills-component" onWheel={this.onWheel} ref={this.scrollContainer}>
                     <table className="bills-table">
                         <thead className="table-head">
@@ -58,11 +59,13 @@ class Bills extends React.Component<Props, State> {
                                         </div>
                                     </div>
                                 </th>
-                                {this.state.billsData.services.map((service: any) => {
+                                {this.state.billsData.services.map((service: ServiceDTO) => {
                                     return (
                                         <th className="head">
-                                            {service.name}
-                                            <i className={`bill-icon ${service.icon}`}></i>
+                                            <NavLink to={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}>
+                                                {service.name}
+                                                <i className={`bill-icon ${service.icon}`}></i>
+                                            </NavLink>
                                         </th>
                                     )
                                 })}
@@ -74,7 +77,7 @@ class Bills extends React.Component<Props, State> {
                         </thead>
                         <tbody className="table-body">
                             {
-                                this.state.billsData.userBillData.map((userData: any) => {
+                                this.state.billsData.userBillData.map((userData: UserBillDataDTO) => {
                                     return (
                                         <tr className="row">
                                             <th className="head user">
@@ -95,7 +98,7 @@ class Bills extends React.Component<Props, State> {
                                                     </div>
                                                 </div>
                                             </th>
-                                            {userData.payments.map((payment: any) => {
+                                            {userData.payments.map((payment: PaymentDTO) => {
                                                 return (
                                                     <th className="cell">
                                                         {payment.amount}
@@ -112,7 +115,21 @@ class Bills extends React.Component<Props, State> {
                         </tbody>
                     </table>
                 </div>
-            </div>
+                {this.state.billsData.services.map((service: ServiceDTO) => {
+                    return (
+                        <Switch>
+                            <Route path={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}
+                                   render={(props: RouteComponentProps) => 
+                                        <BillDetails 
+                                            serviceDetails={this.state.billsData.services}
+                                            {...props} 
+                                       />
+                                   }
+                            />
+                        </Switch>
+                    )
+                })}
+            </React.Fragment>
         )
     }
 }
