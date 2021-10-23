@@ -1,0 +1,21 @@
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($gray2, .6);
+    z-index: 3;
+
+    .modal {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: rem(700);
+        background: $gray2;
+        max-width: rem(1200);
+        padding: rem(60) rem(50);
+        box-shadow: inset 0 0 4px 4px rgba($gray1, .1),
+                    0 0 10px 4px rgba($gray1, .1);
+
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "groupName": "21st Street",
+    "groupPhoto": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1",
+    "services": [
+        {
+            "name": "Heat",
+            "icon": "fas fa-fire",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        },
+        {
+            "name": "Electricity",
+            "icon": "fas fa-bolt",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        },
+        {
+            "name": "Internet",
+            "icon": "fas fa-wifi",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        },
+        {
+            "name": "Water",
+            "icon": "fas fa-tint",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+    },
+        {
+            "name": "Other 1",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        },
+        {
+            "name": "Other 2",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        },
+        {
+            "name": "Other 3",
+            "icon": "",
+            "photo": "https://c.pxhere.com/photos/6b/a1/apartment_building_balconies_building_balcony_apartment_architecture_home_housing-825619.jpg!s1"
+        }
+    ],
+    "userBillData": [
+        {
+            "name": "Eddie Vedder",
+            "paid": true,
+            "photo": "https://www.themoviedb.org/t/p/original/26yDfC30UvaYHwVvfl61q3dokYo.jpg",
+            "totalAmount": 325.00,
+            "payments": [
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                }
+            ]
+        },
+        {
+            "name": "Scott Weiland",
+            "paid": false,
+            "photo": "https://www.citynews1130.com/wp-content/blogs.dir/sites/9/2015/12/04/CPT115313601_hd.jpg",
+            "totalAmount": 366.00,
+            "payments": [
+                {
+                    "amount": 0.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                },
+                {
+                    "amount": 130.00
+                }
+            ]
+        }
+    ]
+}

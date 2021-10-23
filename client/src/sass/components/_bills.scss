@@ -1,0 +1,146 @@
+.bills-component {
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    margin-top: rem(60);
+    
+    .bills-table {
+        white-space: nowrap;
+        border-collapse: collapse;
+    }
+
+    .head {
+        font-weight: 200;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: table-cell;
+
+        &:not(:first-of-type) {
+            padding: rem(14) rem(34);
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: rem(33);
+                height: 1px;
+                background: rgba($white, .2);
+                top: 50%;
+                right: 0;
+                transform: translate(50%);
+            }
+        }
+
+        &:last-of-type,
+        &:nth-last-of-type(2) {
+            &::after {
+                content: none;
+            }
+        }
+
+        &:first-of-type {
+            position: sticky;
+            z-index: 2;
+            left: rem(-25%);
+        }
+
+        &.total {
+            color: rgb(104, 168, 104);
+            font-weight: 600;
+        }
+    }
+
+    .user {
+        .title {
+            font-size: rem(16);
+        }
+
+        .subtitle {
+            font-size: rem(12);
+
+            &.unpaid {
+                color: rgba($white, .5);
+            }
+        }
+    }
+
+    .status-icon {
+        margin-left: 6px;
+        color: rgb(104, 168, 104);
+    }
+
+    .bill-icon {
+        margin-left: 6px;
+        font-size: 14px;
+    }    
+
+    .group {
+        display: flex;
+        padding-left: 0;
+        text-align: left;
+        width: rem(280);
+        white-space: pre-wrap;
+        background: $gray1;
+        padding: rem(14) rem(20);
+        padding-left: 0;
+        border-right: 1px solid $gray2;
+    }
+
+    .group-image {
+        width: rem(50%);
+        height: rem(50%);
+        object-fit: cover;
+    }
+
+    .group-info {
+        margin-left: rem(14);
+    }
+
+    .title {
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-weight: 200;
+        font-size: rem(16);
+    }
+
+    .cell {
+        letter-spacing: 2px;
+        font-weight: 500;
+        position: relative;
+
+        &.total {
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: rem(20);
+                background: rgba(104, 168, 104, 0.4);
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+    }
+
+    .total {
+        position: sticky;
+        right: 0;
+        z-index: 2;
+        background: $gray1;
+    }
+}

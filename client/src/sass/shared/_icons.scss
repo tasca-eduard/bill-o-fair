@@ -1,0 +1,21 @@
+.bill-icon {
+    &.fa-fire {
+        color: rgb(255, 65, 65);
+    }
+
+    &.fa-bolt {
+        color: rgb(255, 251, 31);
+    }
+
+    &.fa-wifi {
+        color: white;
+    }
+
+    &.fa-tint {
+        color: rgb(74, 74, 255);
+    }
+
+    &.fa-cash-register {
+        color: rgb(161, 76, 76);
+    }
+}
