@@ -1,11 +1,12 @@
 import React, { WheelEvent } from 'react';
 import { Switch, Route, NavLink, RouteComponentProps } from 'react-router-dom';
-import { BillsTabelDTO } from '../../api/dtos/BillsTable';
-import { PaymentDTO } from '../../api/dtos/Payment';
-import { ServiceDTO } from '../../api/dtos/Service';
-import { UserBillDataDTO } from '../../api/dtos/UserBillData';
+import { BillsTabelDTO } from '../../common/dtos/BillsTable';
+import { PaymentDTO } from '../../common/dtos/Payment';
+import { ServiceDTO } from '../../common/dtos/Service';
+import { UserBillDataDTO } from '../../common/dtos/UserBillData';
 import BillDetails from '../../components/bill-details/BillDetails';
 import dummyBillsData from '../../dummy-data/bills.json';
+import { handleHorizontalScroll } from '../../common/utilities/HorizontalScroll';
 
 interface Props extends RouteComponentProps {
 
@@ -16,33 +17,38 @@ interface State {
 }
 
 class Bills extends React.Component<Props, State> {
-    scrollContainer: React.RefObject<HTMLDivElement>;
-
     constructor(props: Props) {
         super(props);
-        this.scrollContainer = React.createRef();
         this.state = {
             billsData: dummyBillsData
         }
     }
 
-    onWheel = (e: WheelEvent) => {
-        e.preventDefault()
-        const container = this.scrollContainer.current;
-
-        if(container) {
-            const scrollContainerScrollPosition = container.scrollLeft;
-            container.scrollTo({
-                top: 0,
-                left: scrollContainerScrollPosition + e.deltaY,
-            })
-        }
+    renderTableHead = () => {
+        return (
+            <React.Fragment>
+                {this.state.billsData.services.map((service: ServiceDTO) => {
+                    return (
+                        <th className="head">
+                            <NavLink className="link" title={service.name} to={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}>
+                                {service.name}
+                                <i className={`bill-icon ${service.icon}`}></i>
+                            </NavLink>
+                        </th>
+                    )
+                })}
+                <th className="head total">
+                    Total
+                    <i className="bill-icon fas fa-money-bill"></i>
+                </th>
+            </React.Fragment>
+        )
     }
 
     render() {
         return (
             <React.Fragment>
-                <div className="bills-component" onWheel={this.onWheel} ref={this.scrollContainer}>
+                <div className="bills-component" onWheel={handleHorizontalScroll}>
                     <table className="bills-table">
                         <thead className="table-head">
                             <tr className="row">
@@ -59,20 +65,7 @@ class Bills extends React.Component<Props, State> {
                                         </div>
                                     </div>
                                 </th>
-                                {this.state.billsData.services.map((service: ServiceDTO) => {
-                                    return (
-                                        <th className="head">
-                                            <NavLink className="link" title={service.name} to={`${this.props.match.url}/${service.name.toLowerCase().replaceAll(' ', '')}`}>
-                                                {service.name}
-                                                <i className={`bill-icon ${service.icon}`}></i>
-                                            </NavLink>
-                                        </th>
-                                    )
-                                })}
-                                <th className="head total">
-                                    Total
-                                    <i className="bill-icon fas fa-money-bill"></i>
-                                </th>
+                                {this.renderTableHead()}
                             </tr>
                         </thead>
                         <tbody className="table-body">

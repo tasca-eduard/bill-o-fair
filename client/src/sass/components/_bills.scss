@@ -45,7 +45,7 @@
         }
 
         &.total {
-            color: rgb(104, 168, 104);
+            color: $green1;
             font-weight: 600;
         }
     }
@@ -77,7 +77,7 @@
 
     .status-icon {
         margin-left: 6px;
-        color: rgb(104, 168, 104);
+        color: $green1;
     }
 
     .bill-icon {

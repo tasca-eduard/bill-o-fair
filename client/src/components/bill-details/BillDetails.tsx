@@ -2,7 +2,7 @@ import React from 'react';
 import { Settings } from "react-slick";
 import Slider from "react-slick";
 import { RouteComponentProps } from 'react-router';
-import { ServiceDTO } from '../../api/dtos/Service';
+import { ServiceDTO } from '../../common/dtos/Service';
 import { NavLink } from 'react-router-dom';
 
 interface Props extends RouteComponentProps {
