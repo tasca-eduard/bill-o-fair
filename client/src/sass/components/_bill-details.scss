@@ -1,5 +1,4 @@
 .bill-details-component {
-
     .info {
         display: flex;
         justify-content: space-between;
@@ -9,5 +8,21 @@
         font-size: rem(30);
         color: $primaryType;
         font-weight: 300;
+    }
+
+    .details {
+        max-width: rem(400);
+        width: 100%;
+    }
+
+    .photo-wrapper {
+        max-width: rem(800);
+        width: 100%;
+        max-height: rem(500);
+        overflow-y: auto;
+
+        .photo {
+            width: 100%;
+        }
     }
 }

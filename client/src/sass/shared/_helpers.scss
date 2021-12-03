@@ -2,7 +2,6 @@
     position: absolute;
     inset: 0;
     background: rgba($gray2, .6);
-    backdrop-filter: blur(2px);
     z-index: 3;
 
     .modal {
@@ -54,4 +53,15 @@
     .slick-next {
         right: rem(-60);
     }
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+.scrollable {
+    overflow-y: auto;
+    scrollbar-color: $gray5 $black;
+    scrollbar-width: thin;
+    padding-right: 6px;
 }
