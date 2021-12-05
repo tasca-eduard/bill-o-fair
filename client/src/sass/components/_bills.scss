@@ -17,7 +17,7 @@
         display: table-cell;
 
         &:not(:first-of-type) {
-            padding: rem(14) rem(34);
+            padding: rem(7) rem(24);
 
             &::after {
                 content: "";
@@ -54,10 +54,12 @@
         color: rgba($white, 0.80);
         font-weight: 300;
         transition: .1s ease-in-out;
+        padding: rem(7) rem(10);
         
         &:hover,
         &:focus {
             color: rgba($white, 1);
+            background: rgba($gray2, .9);
         }
     }
 
