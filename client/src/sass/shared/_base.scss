@@ -2,16 +2,18 @@ body {
     background: $gray1;
 }
 
-:focus-visible {
-    outline-color: $white !important;
-    outline-offset: 10px;
-}
-
-* {
+a,
+button,
+.scrollable {
     outline-width: 1px;
     outline-color: transparent;
     outline-style: solid;
-    transition: .2s outline-color ease-in-out, .2s outline-offset ease-in-out !important;
+    transition: .2s outline-color ease-in-out, .2s outline-offset ease-in-out;
+
+    :focus-visible {
+        outline-color: $white;
+        outline-offset: 10px;
+    }
 }
 
 *,

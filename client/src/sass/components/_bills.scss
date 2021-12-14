@@ -8,6 +8,19 @@
         border-collapse: collapse;
     }
 
+    .table-body {
+        .row {
+            background: transparent;
+            transition: .2s ease-in-out;
+    
+            &:hover,
+            &:focus,
+            &.selected {
+                background: rgba($white, .05);
+            }
+        }
+    }
+
     .head {
         font-weight: 200;
         color: $white;
@@ -54,7 +67,7 @@
         font-weight: 300;
         transition: .1s ease-in-out;
         padding: rem(7) rem(10);
-        
+
         &:hover,
         &:focus {
             color: rgba($white, 1);
@@ -124,6 +137,15 @@
         letter-spacing: 2px;
         font-weight: 500;
         position: relative;
+        text-align: center;
+
+        &:not(.total) {
+            &:hover,
+            &:focus,
+            &.selected {
+                background: rgba($white, .05);
+            }
+        }
 
         &.total {
             &::before,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { UserBillDataDTO } from '../../common/dtos/UserBillData';
 import BillsTablePayments from './BillsTablePayments';
 
@@ -7,6 +7,10 @@ interface Props {
 }
 
 class BillsTableBody extends React.Component<Props, {}> {
+    selectRow = (e: MouseEvent<HTMLTableCellElement>) => {
+        e.currentTarget.closest('.row')?.classList.toggle('selected');
+    }
+
     render() {
         return (
             <tbody className="table-body">
@@ -14,7 +18,7 @@ class BillsTableBody extends React.Component<Props, {}> {
                 this.props.userBillData.map((userData: UserBillDataDTO, index: number) => {
                     return (
                         <tr key={index} className="row">
-                            <th className="head user">
+                            <th className="head user" onClick={this.selectRow}>
                                 <div className="group">
                                     <img className="group-image" src={userData.photo} alt="User group" />
                                     <div className="group-info">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { PaymentDTO } from '../../common/dtos/Payment';
 
 interface Props {
@@ -6,13 +6,17 @@ interface Props {
 }
 
 class BillsTablePayments extends React.Component<Props, {}> {
+    selectCell = (e: MouseEvent<HTMLTableCellElement>) => {
+        e.currentTarget.classList.toggle('selected');
+    }
+
     render() {
         return (
             this.props.payments.map((payment: PaymentDTO, index: number) => {
                 return (
-                    <th key={index} className="cell">
+                    <td key={index} className="cell" onClick={this.selectCell}>
                         {payment.amount}
-                    </th>
+                    </td>
                 )
             })
         )
