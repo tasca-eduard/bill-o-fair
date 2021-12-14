@@ -23,8 +23,8 @@ class App extends React.Component<Props, State> {
         return (
             <div className="app">
                 <BrowserRouter>
+                    <Navigation />
                     <main className="main-component">
-                        <Navigation />
                         <div className="container">
                             <Route 
                                 path="/bills"

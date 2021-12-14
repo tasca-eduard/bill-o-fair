@@ -2,8 +2,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    margin-top: rem(60);
-    
+
     .bills-table {
         white-space: nowrap;
         border-collapse: collapse;
@@ -150,8 +149,51 @@
 
     .total {
         position: sticky;
-        right: 0;
+        right: -12px;
         z-index: 2;
         background: $gray1;
+    }
+
+    @media screen and (max-width: 575px) {
+        .head {
+            &:not(:first-of-type) {
+                padding: rem(2) rem(2);
+
+                &::after {
+                    width: rem(10);
+                }
+            }
+
+            &.total {
+                padding-left: 10px;
+                font-size: 8px;
+            }
+        }
+
+        .group {
+            padding: rem(14) rem(0);
+            width: rem(150);
+        }
+
+        .group-image {
+            min-width: rem(35);
+        }
+
+        .title {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 8px;
+        }
+
+        .link {
+            font-size: 8px;
+        }
+
+        .bill-icon {
+            font-size: 10px;
+        }
     }
 }
