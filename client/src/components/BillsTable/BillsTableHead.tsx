@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { DragEvent, DragEventHandler } from 'react';
 import { match } from 'react-router-dom';
 import { ServiceDTO } from '../../common/dtos/Service';
 import BillsTableServiceLinks from './BillsTableServiceLinks';
@@ -10,7 +10,13 @@ interface Props {
     match: match
 }
 
-class BillsTableHead extends React.Component<Props, {}> {
+interface State {
+    mouseDown: boolean,
+    startX: number,
+    scrollLeft: number
+}
+
+class BillsTableHead extends React.Component<Props, State> {
     render() {
         return (
             <thead className="table-head">

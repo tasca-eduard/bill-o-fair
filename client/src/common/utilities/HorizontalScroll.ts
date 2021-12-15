@@ -1,6 +1,6 @@
 import { WheelEvent } from "react";
 
-export const handleHorizontalScroll = (e: WheelEvent<HTMLDivElement>) => {
+export function handleHorizontalScroll(e: WheelEvent<HTMLElement>) {
     e.preventDefault()
     const container = e.currentTarget;
     const scrollContainerScrollPosition = container.scrollLeft;

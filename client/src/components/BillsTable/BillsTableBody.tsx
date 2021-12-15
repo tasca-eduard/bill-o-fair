@@ -38,7 +38,9 @@ class BillsTableBody extends React.Component<Props, {}> {
                             </th>
                             <BillsTablePayments payments={userData.payments} />
                             <th className="cell total">
-                                {userData.totalAmount}
+                                <span>
+                                    {userData.totalAmount}
+                                </span>
                             </th>
                         </tr>   
                     )
