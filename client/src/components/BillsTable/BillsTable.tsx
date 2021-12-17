@@ -8,33 +8,28 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 
 interface Props {
     match: match,
-    billsData: BillsTabelDTO
+    billsData: BillsTabelDTO,
+    isShowScrollbar: boolean
 }
 
 interface State {
-    isScrolling: boolean,
-    clientX: number,
-    scrollX: number
+
 }
 
 class BillsTable extends React.Component<Props, State> {
-    tableRef: React.RefObject<HTMLTableElement>;
-
     constructor(props: Props) {
         super(props);
-        this.tableRef = React.createRef();
-        this.state = {
-          isScrolling: false,
-          clientX: 0,
-          scrollX: 0,
-        };
+    }
+
+    toggleScrollbar() {
+        return this.props.isShowScrollbar ? 'show-scrollbar' : '';
     }
 
     render() {
         return (
             <React.Fragment>
                 <div className="bills-component scrollable" >
-                    <ScrollContainer>
+                    <ScrollContainer className={this.toggleScrollbar()}>
                         <table className="bills-table">
                             <BillsTableHead 
                                 match={this.props.match} 

@@ -1,0 +1,28 @@
+.utility-bar {
+    position: relative;
+    z-index: 10;
+    margin-bottom: rem(10);
+
+    .utility-btn {
+        background: transparent;
+        padding: 8px;
+        color: $primaryType;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        background: $gray2;
+        font-size: rem(12);
+
+        &:focus,
+        &:hover {
+            background: lighten($gray2, 5%)
+        }
+    }
+
+    .fa-sign {
+        transform: rotate(180deg);
+        margin-right: 4px;
+        position: relative;
+    }
+}

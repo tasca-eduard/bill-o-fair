@@ -1,8 +1,13 @@
 .bills-component {
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    touch-action: pan-x;
-    height: 80vh;
+    .indiana-scroll-container {
+        height: 80vh;
+        overflow: auto;
+
+        &.show-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: $gray3 $gray2;
+        }
+    }
 
     .bills-table {
         white-space: nowrap;
@@ -50,10 +55,16 @@
         letter-spacing: 2px;
         position: relative;
         display: table-cell;
+        position: sticky;
+        top: 0;
+        background: $gray1;
+        z-index: 9;
 
         &:not(:first-of-type) {
             padding: rem(7) rem(24);
-
+            z-index: 2;
+            box-shadow: inset 0px -2px 0px $gray2;
+            
             &::after {
                 content: "";
                 position: absolute;
@@ -75,13 +86,31 @@
 
         &:first-of-type {
             position: sticky;
-            z-index: 2;
             left: rem(-25%);
+        }
+
+        &:not(.user) {
+            .group-info {
+                width: 100%;
+            }
+
+            .subtitle {
+                display: flex;
+                align-items: center;
+
+                &::after {
+                    content: '';
+                    flex-grow: 1;
+                    border-bottom: 1px dashed $gray3;
+                    margin-left: 4px;
+                }
+            }
         }
 
         &.total {
             color: $green1;
             font-weight: 600;
+            z-index: 9;
         }
     }
 
@@ -100,6 +129,8 @@
     }
 
     .user {
+        z-index: 2;
+
         .title {
             font-size: rem(16);
         }
