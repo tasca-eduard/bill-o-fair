@@ -20,7 +20,7 @@ class Bills extends React.Component<Props, State> {
         super(props);
         this.state = {
             billsData: dummyBillsData,
-            isShowScrollbar: localStorage.getItem('isShowScrollbar') ? Boolean(localStorage.getItem('isShowScrollbar')) : false 
+            isShowScrollbar: localStorage.getItem('isShowScrollbar') ? localStorage.getItem('isShowScrollbar') === 'true' ? true : false : false
         }
     }
 
