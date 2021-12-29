@@ -26,7 +26,6 @@ class Bills extends React.Component<Props, State> {
 
     toggleTableScrollbars = () => {
         this.setState((prevState: State) => {
-            console.log(String(!prevState.isShowScrollbar))
             localStorage.setItem('isShowScrollbar', String(!prevState.isShowScrollbar));
 
             return {

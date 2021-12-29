@@ -1,0 +1,24 @@
+.tooltip-component {
+    background: $gray1;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 50%;
+    transform: translate(100%, -100%);
+    box-shadow: 0 0 4px 1px $gray2;
+    padding: rem(10) rem(14);
+    text-transform: none;
+    line-height: 1.4;
+    width: rem(300);
+    font-size: rem(14);
+
+    p {
+        margin-bottom: rem(10);
+    }
+
+    code {
+        background: $gray3;
+        padding: 2px;
+        letter-spacing: 1px;
+    }
+}
