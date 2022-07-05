@@ -2,7 +2,7 @@ import React from 'react';
 import '../src/sass/main.scss';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter, Route, RouteComponentProps } from 'react-router-dom';
 import Navigation from './components/navigation/Navigation';
 import Bills from './pages/bills/Bills';
 
@@ -23,8 +23,8 @@ class App extends React.Component<Props, State> {
         return (
             <div className="app">
                 <BrowserRouter>
-                    <main className="main-component">
-                        <Navigation />
+                    <Navigation />
+                    <main className="main">
                         <div className="container">
                             <Route 
                                 path="/bills"

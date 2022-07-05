@@ -1,9 +1,18 @@
-html {
-    font-size: 16px;
-}
-
 body {
     background: $gray1;
+}
+
+a,
+button {
+    outline-width: 1px !important;
+    outline-color: transparent !important;
+    outline-style: solid !important;
+    transition: .2s all !important;
+        
+    &:focus-visible {
+        outline-color: $white !important;
+        outline-offset: 10px !important;
+    }
 }
 
 *,
@@ -21,3 +30,5 @@ ul {
 a {
     text-decoration: none;
 }
+
+
